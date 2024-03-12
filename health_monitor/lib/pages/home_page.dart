@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
-  Homepage();
+  const Homepage({super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -15,7 +15,25 @@ class _HomePageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Health Monitor'),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          _top()
+        ],
+      ),
+    );
+  }
+
+
+  Widget _top(){
+    return Container(
+    width: double.infinity,
+      height: 200,
+      color: Colors.blue,
+    child: const Text('Top'),
     );
   }
 }

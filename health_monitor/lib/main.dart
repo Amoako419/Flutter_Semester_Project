@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:health_monitor/pages/home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MaterialApp(
+     title: 'Health Monitor',
+     ));
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Homepage(),
+      home: const Homepage(),
     );
   }
 }
