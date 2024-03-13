@@ -35,16 +35,52 @@ class _HomePageState extends State<Homepage> {
   }
 
 
+// Widget _top() {
+//   return Container(
+//     padding: const EdgeInsets.all(20),
+//     width: double.infinity,
+//     height: 200,
+//     color: Colors.blue,
+//     child: Column(
+//       mainAxisAlignment: MainAxisAlignment.center,
+//       children: [
+//         const Text('Heart Rates', style: TextStyle(fontSize: 30, color: Color.fromARGB(255, 252, 251, 251))),
+//         const SizedBox(height: 20),
+//         ElevatedButton(
+//           onPressed: () {
+//             // Add your button press logic here
+//           },
+//           child: const Text('View Heart Rate'),
+//         ),
+//       ],
+//     ),
+//   );
+// }
+
 Widget _top() {
   return Container(
     padding: const EdgeInsets.all(20),
     width: double.infinity,
     height: 200,
-    color: Colors.blue,
+    decoration: const BoxDecoration(
+      borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(20),
+        bottomRight: Radius.circular(20),
+        topLeft: Radius.circular(20),
+        topRight: Radius.circular(20),
+      ),
+      image: DecorationImage(
+        image: AssetImage('assets/images/heart.png'),
+        fit: BoxFit.cover,
+      ),
+    ),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text('Heart Rates', style: TextStyle(fontSize: 30, color: Color.fromARGB(255, 252, 251, 251))),
+        const Text(
+          'Heart Rates',
+          style: TextStyle(fontSize: 30, color: Color.fromARGB(255, 0, 0, 0)),
+        ),
         const SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {
@@ -57,6 +93,8 @@ Widget _top() {
   );
 }
 
+
+
   Widget _space(){
     return Container(
       height: 30.0,
@@ -68,17 +106,31 @@ Widget _middle() {
     padding: const EdgeInsets.all(20),
     width: double.infinity,
     height: 200,
-    color: Colors.blue,
+    decoration: const BoxDecoration(
+      borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(20),
+        bottomRight: Radius.circular(20),
+        topLeft: Radius.circular(20),
+        topRight: Radius.circular(20),
+      ),
+      image: DecorationImage(
+        image: AssetImage('assets/images/steps.jpeg'),
+        fit: BoxFit.cover,
+      ),
+    ),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text('Steps', style: TextStyle(fontSize: 30, color: Color.fromARGB(255, 252, 251, 251))),
+        const Text(
+          'Steps',
+          style: TextStyle(fontSize: 30, color: Color.fromARGB(255, 0, 0, 0)),
+        ),
         const SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {
             // Add your button press logic here
           },
-          child: const Text('View Steps'),
+          child: const Text('View Steps Course'),
         ),
       ],
     ),
@@ -91,17 +143,31 @@ Widget _button() {
     padding: const EdgeInsets.all(20),
     width: double.infinity,
     height: 200,
-    color: Colors.blue,
+    decoration: const BoxDecoration(
+      borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(20),
+        bottomRight: Radius.circular(20),
+        topLeft: Radius.circular(20),
+        topRight: Radius.circular(20),
+      ),
+      image: DecorationImage(
+        image: AssetImage('assets/images/sleep.jpg'),
+        fit: BoxFit.cover,
+      ),
+    ),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text('Sleep', style: TextStyle(fontSize: 30, color: Color.fromARGB(255, 252, 251, 251))),
+        const Text(
+          'Sleep',
+          style: TextStyle(fontSize: 30, color: Color.fromARGB(255, 252, 251, 251)),
+        ),
         const SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {
             // Add your button press logic here
           },
-          child: const Text('Start Sleep'),
+          child: const Text('View sleep Stats'),
         ),
       ],
     ),
