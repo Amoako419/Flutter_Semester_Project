@@ -195,7 +195,7 @@ Widget _end() {
         SizedBox(width: 10.0),
         Icon(Icons.home, color: Colors.blue, size: 40,),
         SizedBox(width: 10.0),
-        Icon(Icons.person_2_outlined, color: Colors.green, size: 40,),
+        Icon(Icons.person_3_rounded, color: Colors.green, size: 40,),
       ],
     );
   }
