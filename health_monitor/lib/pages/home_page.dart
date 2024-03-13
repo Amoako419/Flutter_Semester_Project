@@ -174,15 +174,28 @@ Widget _button() {
   );
 }
 
-  Widget _end(){
+  // Widget _end(){
+  //   return const Row(
+  //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      
+  //     children: [
+  //       Icon(Icons.favorite,size: 40,),
+  //       SizedBox(width: 10.0),
+  //       Icon(Icons.home,size: 40,),
+  //       SizedBox(width: 10.0),
+  //       Icon(Icons.menu,size: 40,),
+  //     ],
+  //   );
+  // }
+Widget _end() {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Icon(Icons.favorite,size: 40,),
+        Icon(Icons.favorite, color: Colors.red, size: 40,),
         SizedBox(width: 10.0),
-        Icon(Icons.home,size: 40,),
+        Icon(Icons.home, color: Colors.blue, size: 40,),
         SizedBox(width: 10.0),
-        Icon(Icons.menu,size: 40,),
+        Icon(Icons.person_2_outlined, color: Colors.green, size: 40,),
       ],
     );
   }
