@@ -84,7 +84,9 @@ Widget _top() {
         const SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {
-            // Add your button press logic here
+            Navigator.push(context, 
+            MaterialPageRoute(builder: (context)=> const HeartRate()),
+            );
           },
           child: const Text('View Heart Rate'),
         ),
@@ -128,7 +130,9 @@ Widget _middle() {
         const SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {
-            // Add your button press logic here
+             Navigator.push(context, 
+            MaterialPageRoute(builder: (context)=> const Steps()),
+            );
           },
           child: const Text('View Steps Course'),
         ),
@@ -165,7 +169,9 @@ Widget _button() {
         const SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {
-            // Add your button press logic here
+             Navigator.push(context, 
+            MaterialPageRoute(builder: (context)=> const Sleep()),
+            );
           },
           child: const Text('View sleep Stats'),
         ),
@@ -200,3 +206,61 @@ Widget _end() {
     );
   }
 }
+
+class HeartRate extends StatelessWidget{
+  const HeartRate({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+  leading: IconButton(
+    icon: const Icon(Icons.arrow_back),
+    onPressed: () {
+      Navigator.pop(context);
+    },
+  ),
+  title: const Text("Heart Rate"),
+),
+    );
+  }
+} 
+
+
+class Steps extends StatelessWidget{
+  const Steps({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+  leading: IconButton(
+    icon: const Icon(Icons.arrow_back),
+    onPressed: () {
+      Navigator.pop(context);
+    },
+  ),
+  title: const Text("Steps"),
+),
+    );
+  }
+} 
+
+class Sleep extends StatelessWidget{
+  const Sleep({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+  leading: IconButton(
+    icon: const Icon(Icons.arrow_back),
+    onPressed: () {
+      Navigator.pop(context);
+    },
+  ),
+  title: const Text("Sleep"),
+),
+    );
+  }
+} 
