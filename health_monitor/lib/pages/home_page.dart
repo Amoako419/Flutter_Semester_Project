@@ -276,11 +276,15 @@ class HeartRate extends StatelessWidget{
 
   Widget _pulseTx(){
     return Container(
-      child: const Column(
+      child:  Column(
         children: [
-        Text("current pulse",style: TextStyle(fontStyle: FontStyle.italic),),
-        Text("89 BPM",style: TextStyle(fontStyle: FontStyle.normal, fontSize: 80.0 ,color: Colors.red,),)
-        
+        const Text("current pulse",style: TextStyle(fontStyle: FontStyle.italic),),
+        const Text("89 BPM",style: TextStyle(fontStyle: FontStyle.normal, fontSize: 80.0 ,color: Colors.red,),),
+        ElevatedButton(onPressed: (){
+          print("Connect your accessory");
+        }, child: const Text("Check my pulse",style: TextStyle(color: Colors.white)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red)),
+        )
         ],
       ),
     );
