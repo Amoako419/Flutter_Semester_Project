@@ -248,13 +248,15 @@ class HeartRate extends StatelessWidget{
   title: const Text("Heart Rate"),
 ),
   body: Column(
-    children: [_pulse()],
+    children: [_pulseIm(),
+    _pulseTx()
+    ],
   )
     );
   }
-  Widget _pulse(){
+  Widget _pulseIm(){
     return Container(
-       padding: const EdgeInsets.all(20),
+    padding: const EdgeInsets.all(20),
     width: double.infinity,
     height: 200,
     decoration: const BoxDecoration(
@@ -268,11 +270,21 @@ class HeartRate extends StatelessWidget{
         image: AssetImage('assets/images/pulse.webp'),
         fit: BoxFit.cover,
       ),
-    )
+    ),
     );
   }
 
-
+  Widget _pulseTx(){
+    return Container(
+      child: const Column(
+        children: [
+        Text("current pulse",style: TextStyle(fontStyle: FontStyle.italic),),
+        Text("89 BPM",style: TextStyle(fontStyle: FontStyle.normal, fontSize: 80.0 ,color: Colors.red,),)
+        
+        ],
+      ),
+    );
+  }
 } 
 /////////////////// HeartRate End //////////////////////////////////
 
