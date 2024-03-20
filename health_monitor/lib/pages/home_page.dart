@@ -247,9 +247,32 @@ class HeartRate extends StatelessWidget{
   ),
   title: const Text("Heart Rate"),
 ),
-  body: const Text("Heart Rate"),
+  body: Column(
+    children: [_pulse()],
+  )
     );
   }
+  Widget _pulse(){
+    return Container(
+       padding: const EdgeInsets.all(20),
+    width: double.infinity,
+    height: 200,
+    decoration: const BoxDecoration(
+      borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(20),
+        bottomRight: Radius.circular(20),
+        topLeft: Radius.circular(20),
+        topRight: Radius.circular(20),
+      ),
+      image: DecorationImage(
+        image: AssetImage('assets/images/pulse.webp'),
+        fit: BoxFit.cover,
+      ),
+    )
+    );
+  }
+
+
 } 
 /////////////////// HeartRate End //////////////////////////////////
 
