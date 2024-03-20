@@ -194,19 +194,39 @@ Widget _button() {
   //   );
   // }
 Widget _end() {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Icon(Icons.favorite, color: Colors.red, size: 40,),
-        SizedBox(width: 10.0),
-        Icon(Icons.home, color: Colors.blue, size: 40,),
-        SizedBox(width: 10.0),
-        Icon(Icons.person_3_rounded, color: Colors.green, size: 40,),
-      ],
-    );
-  }
+  return  Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      const SizedBox(width: 10.0,),
+      IconButton(
+        icon: const Icon(Icons.favorite, color: Colors.red, size: 40,),
+       onPressed: () {
+        // Favorites page
+        Navigator.push(context, 
+        MaterialPageRoute(builder: (context)=> const Favorite()));
+        },
+      ),
+      const SizedBox(width: 10.0),
+      IconButton(
+        icon: const Icon(Icons.home, color: Colors.blue, size: 40,),
+        onPressed: () {
+          // Do something
+        },
+      ),
+      const SizedBox(width: 10.0),
+      IconButton(
+        icon: const Icon(Icons.person_3_rounded, color: Colors.green, size: 40,),
+       onPressed: () {
+        // Favorites page
+        Navigator.push(context, 
+        MaterialPageRoute(builder: (context)=> const Profile()));
+        },
+      ),
+    ],
+  );
 }
-
+}
+/////////////////// HeartRate Start //////////////////////////////////
 class HeartRate extends StatelessWidget{
   const HeartRate({super.key});
 
@@ -222,11 +242,14 @@ class HeartRate extends StatelessWidget{
   ),
   title: const Text("Heart Rate"),
 ),
+  body: const Text("Heart Rate"),
     );
   }
 } 
+/////////////////// HeartRate End //////////////////////////////////
 
 
+/////////////////// Steps Start //////////////////////////////////
 class Steps extends StatelessWidget{
   const Steps({super.key});
 
@@ -245,7 +268,10 @@ class Steps extends StatelessWidget{
     );
   }
 } 
+/////////////////// Steps End //////////////////////////////////
 
+
+/////////////////// Sleep Start //////////////////////////////////
 class Sleep extends StatelessWidget{
   const Sleep({super.key});
 
@@ -264,3 +290,65 @@ class Sleep extends StatelessWidget{
     );
   }
 } 
+/////////////////// Sleep End //////////////////////////////////
+///
+///
+///
+////////////////////// Favorite Start //////////////////////////////////
+class Favorite extends StatelessWidget{
+  const Favorite({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+    backgroundColor: Colors.red,
+  leading: IconButton(
+    icon: const Icon(Icons.home),
+    onPressed: () {
+      Navigator.pop(context);
+    },
+  ),
+  title: const Text("Favorites"),
+),
+    );
+  }
+}
+
+////////////////////// Favorite End //////////////////////////////////
+///
+///
+///
+///////////////////////// Profile Start //////////////////////////////////
+
+class Profile extends StatelessWidget{
+  const Profile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+    backgroundColor: Colors.green,
+  leading: IconButton(
+    icon: const Icon(Icons.home),
+    color: Colors.white,
+    onPressed: () {
+      Navigator.pop(context);
+    },
+  ),
+  title: const Text("Profile",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+),
+body: const Column(children: [
+  // EndDrawerButton()
+  Center(
+    child: CircleAvatar(
+      radius: 95.0,
+      backgroundImage: 
+      AssetImage('assets/images/jobs.JPG'),
+
+    ),
+  )
+]),
+    );
+  }
+}
