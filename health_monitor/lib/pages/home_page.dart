@@ -281,9 +281,10 @@ class HeartRate extends StatelessWidget{
         const Text("current pulse",style: TextStyle(fontStyle: FontStyle.italic),),
         const Text("89 BPM",style: TextStyle(fontStyle: FontStyle.normal, fontSize: 80.0 ,color: Colors.red,),),
         ElevatedButton(onPressed: (){
-          print("Connect your accessory");
-        }, child: const Text("Check my pulse",style: TextStyle(color: Colors.white)),
+          // print("Connect your accessory");
+        },
           style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red)),
+           child: const Text("Check my pulse",style: TextStyle(color: Colors.white)),
         )
         ],
       ),
