@@ -225,7 +225,12 @@ Widget _end() {
     ],
   );
 }
+
+
+
 }
+
+
 /////////////////// HeartRate Start //////////////////////////////////
 class HeartRate extends StatelessWidget{
   const HeartRate({super.key});
@@ -338,17 +343,29 @@ class Profile extends StatelessWidget{
   ),
   title: const Text("Profile",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
 ),
-body: const Column(children: [
-  // EndDrawerButton()
-  Center(
+body: Column(children: [
+    _avatar(),
+    _ProfileInfo(),
+]),
+    );
+  }
+
+  // ignore: non_constant_identifier_names
+  Widget _ProfileInfo(){
+return const Column(
+  children: [
+    Text("Name: Steve Jobs")
+  ],
+);
+}
+
+Widget _avatar(){
+  return const Center(
     child: CircleAvatar(
       radius: 95.0,
       backgroundImage: 
       AssetImage('assets/images/jobs.JPG'),
-
-    ),
-  )
-]),
-    );
-  }
+      ),
+  );
+}
 }
