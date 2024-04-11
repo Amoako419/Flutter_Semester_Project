@@ -30,7 +30,9 @@ class HeartRate extends StatelessWidget{
       },
         style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red)),
          child: const Text("Check my pulse",style: TextStyle(color: Colors.white)),
-      )
+      ),
+      _space(),
+      history()
 
     ],
   )
@@ -57,23 +59,19 @@ class HeartRate extends StatelessWidget{
     );
   }
 
-  // Widget _pulseTx(){
-  //   return Column(
-  //     children: [
-  //     const Text("current pulse",style: TextStyle(fontStyle: FontStyle.italic),),
-  //     const Text("89 BPM",style: TextStyle(fontStyle: FontStyle.normal, fontSize: 80.0 ,color: Colors.red,),),
-  //     ElevatedButton(onPressed: (){
-  //       final snackBar = SnackBar(content: const Text("Connect to your device"),
-  //       action: SnackBarAction(label: 'Done',
-  //       onPressed: (){},
-  //       ),
-  //       );
-  //       ScaffoldMessenger.of(context).showSnackBar(snackBar);
-  //     },
-  //       style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red)),
-  //        child: const Text("Check my pulse",style: TextStyle(color: Colors.white)),
-  //     )
-  //     ],
-  //   );
-  // }
+
+  Widget history(){
+    return const Column(
+      children: [
+        Text('History',style: TextStyle(fontStyle: FontStyle.normal, fontSize: 30.0 ,color: Colors.black,decoration: TextDecoration.underline)),
+        Text('No recent heart rates available',style: TextStyle(fontStyle: FontStyle.italic),)
+      ],
+    );
+  }
+
+   Widget _space(){
+    return Container(
+      height: 30.0,
+    );
+  }
 } 
