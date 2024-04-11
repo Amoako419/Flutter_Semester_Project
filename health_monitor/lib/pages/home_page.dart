@@ -357,6 +357,13 @@ class Favorite extends StatelessWidget{
   ),
   title: const Text("Favorites"),
 ),
+  body: const Column(
+    children: [
+      Center(child: Text("Your favorites are empty now"),
+      
+      ),
+    ],
+  ),
     );
   }
 }
