@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:health_monitor/pages/heart_rate.dart';
+import 'package:health_monitor/pages/steps.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -33,6 +35,7 @@ class _HomePageState extends State<Homepage> {
         ],
       ),
     );
+    
   }
 
 
@@ -233,87 +236,12 @@ Widget _end() {
 
 
 /////////////////// HeartRate Start //////////////////////////////////
-class HeartRate extends StatelessWidget{
-  const HeartRate({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-  leading: IconButton(
-    icon: const Icon(Icons.arrow_back),
-    onPressed: () {
-      Navigator.pop(context);
-    },
-  ),
-  title: const Text("Heart Rate"),
-),
-  body: Column(
-    children: [_pulseIm(),
-    _pulseTx()
-    ],
-  )
-    );
-  }
-  Widget _pulseIm(){
-    return Container(
-    padding: const EdgeInsets.all(20),
-    width: double.infinity,
-    height: 200,
-    decoration: const BoxDecoration(
-      borderRadius: BorderRadius.only(
-        bottomLeft: Radius.circular(20),
-        bottomRight: Radius.circular(20),
-        topLeft: Radius.circular(20),
-        topRight: Radius.circular(20),
-      ),
-      image: DecorationImage(
-        image: AssetImage('assets/images/pulse.webp'),
-        fit: BoxFit.cover,
-      ),
-    ),
-    );
-  }
-
-  Widget _pulseTx(){
-    return Container(
-      child:  Column(
-        children: [
-        const Text("current pulse",style: TextStyle(fontStyle: FontStyle.italic),),
-        const Text("89 BPM",style: TextStyle(fontStyle: FontStyle.normal, fontSize: 80.0 ,color: Colors.red,),),
-        ElevatedButton(onPressed: (){
-          // print("Connect your accessory");
-        },
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red)),
-           child: const Text("Check my pulse",style: TextStyle(color: Colors.white)),
-        )
-        ],
-      ),
-    );
-  }
-} 
+// 
 /////////////////// HeartRate End //////////////////////////////////
 
 
 /////////////////// Steps Start //////////////////////////////////
-class Steps extends StatelessWidget{
-  const Steps({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-  leading: IconButton(
-    icon: const Icon(Icons.arrow_back),
-    onPressed: () {
-      Navigator.pop(context);
-    },
-  ),
-  title: const Text("Steps"),
-),
-    );
-  }
-} 
 /////////////////// Steps End //////////////////////////////////
 
 
@@ -475,4 +403,5 @@ Widget _edit(){
   ),child: const Text("Edit details")
   );
 }
+
 }
