@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:health_monitor/pages/heart_rate.dart';
 import 'package:health_monitor/pages/sleep.dart';
@@ -25,9 +27,26 @@ class _HomePageState extends State<Homepage> {
         
         title: const Text('Health Monitor'),
         centerTitle: true,
+        
           
       ),
-      body: Column(
+      bottomNavigationBar: BottomNavigationBar(items: [
+        //favorite
+        const BottomNavigationBarItem(icon: Icon(Icons.favorite),
+        label: 'Favorites',
+        ),
+        //home
+        BottomNavigationBarItem(icon: Icon(Icons.home),
+        label: 'Home',
+        ),
+        //profile
+        BottomNavigationBarItem(icon: Icon(Icons.person_2_rounded),
+        label: 'Profile',
+        ),
+      ]),
+      body: 
+      SingleChildScrollView(
+      child:Column(
         children: [
           _top(),
           _space(),
@@ -35,9 +54,10 @@ class _HomePageState extends State<Homepage> {
           _space(),
           _button(),
           _space(),
-          _end()
+          
         ],
       ),
+      )
     );
     
   }
@@ -68,6 +88,7 @@ class _HomePageState extends State<Homepage> {
 Widget _top() {
   return Container(
     padding: const EdgeInsets.all(20),
+    margin: const EdgeInsets.all(20),
     width: double.infinity,
     height: 200,
     decoration: const BoxDecoration(
@@ -114,6 +135,7 @@ Widget _top() {
 Widget _middle() {
   return Container(
     padding: const EdgeInsets.all(20),
+    margin: const EdgeInsets.all(20),
     width: double.infinity,
     height: 200,
     decoration: const BoxDecoration(
@@ -153,6 +175,7 @@ Widget _middle() {
 Widget _button() {
   return Container(
     padding: const EdgeInsets.all(20),
+    margin: const EdgeInsets.all(20),
     width: double.infinity,
     height: 200,
     decoration: const BoxDecoration(
@@ -202,7 +225,12 @@ Widget _button() {
   //   );
   // }
 Widget _end() {
-  return  Row(
+  return Positioned(
+    bottom: 0,
+    right: 0,
+
+    child: 
+   Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
       const SizedBox(width: 10.0,),
@@ -231,6 +259,7 @@ Widget _end() {
         },
       ),
     ],
+   )
   );
 }
 

@@ -79,13 +79,21 @@ class Sleep extends StatelessWidget {
       ),
       color: Colors.cyan
     ),
-    child:  const Column(
+    child:   Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        CircleAvatar(
-          radius: 120.0,
-          backgroundImage: AssetImage('bed.jpg'),
-        )
+        const CircleAvatar(
+          radius: 60.0,
+          backgroundImage: 
+          AssetImage('assets/images/bed.jpg'),
+        ),
+        const Align(
+        alignment: Alignment.topLeft,
+        child:  Text("Set Up Sleep",style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold,color: Colors.black),),),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text("Your devices can help you get better sleep and understand your sleep patterns",style: TextStyle(fontSize: 12.0,color: Colors.black),)),
+          ElevatedButton(onPressed: (){}, child: const Text("Get started",style: TextStyle(fontSize:15.1)))
       ],
     ),
     );
