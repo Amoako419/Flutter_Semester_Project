@@ -14,16 +14,92 @@ class Steps extends StatelessWidget {
           },
         ),
         title: const Text("Steps"),
+        bottom: const TabBar(tabs: [
+          Tab(text: "M"),
+          Tab(text: "T"),
+          Tab(text: "W"),
+          Tab(text: "T"),
+          Tab(text: "F"),
+          Tab(text: "S"),
+          Tab(text: "S"),
+
+        ]),
       ),
-      body: Column(children: [
-        _tabBar(),
-      ]),
+      body: TabBarView(children: [
+           _monday(),
+          _tuesday(),
+          _wednesday(),
+          _thursday(),
+          _friday(),
+          _saturday(),
+          _sunday()
+      ],)
     );
   }
 
-  Widget _tabBar() {
+  ////--- Start Monday --//////
+  Widget _monday() {
    return Container(
-    
+
    );
   }
+  ////--- End Monday --//////
+  ///
+  ///
+  ///
+  ////--- Start Monday --//////
+  Widget _tuesday() {
+   return Container(
+
+   );
+  }
+  ////--- End Monday --//////
+  ////--- Start Monday --//////
+  Widget _wednesday() {
+   return Container(
+
+   );
+  }
+  ////--- End Monday --//////
+  ///
+  ///
+  ///
+  ////--- Start Monday --//////
+  Widget _thursday() {
+   return Container(
+
+   );
+  }
+  ////--- End Monday --//////
+  ///
+  ///
+  ///
+  ////--- Start Monday --//////
+  Widget _friday() {
+   return Container(
+
+   );
+  }
+  ////--- End Monday --//////
+  ///
+  ///
+
+  ///
+  ///
+  ////--- Start Monday --//////
+  Widget _saturday() {
+   return Container(
+
+   );
+  }
+  ////--- End Monday --//////
+  ///
+  ///
+  ////--- Start Monday --//////
+  Widget _sunday() {
+   return Container(
+
+   );
+  }
+  ////--- End Monday --//////
 }
