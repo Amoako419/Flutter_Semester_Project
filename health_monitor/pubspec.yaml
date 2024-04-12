@@ -67,6 +67,8 @@ flutter:
     - assets/images/heart.png
     - assets/images/jobs.JPG
     - assets/images/pulse.webp
+    - assets/images/bed.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

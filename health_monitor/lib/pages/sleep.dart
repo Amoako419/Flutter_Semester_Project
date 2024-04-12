@@ -49,18 +49,45 @@ class Sleep extends StatelessWidget {
         const Align(
           alignment: Alignment.topLeft,
           child: Text(
-            "No Data",
+            "  No Data",
             style: TextStyle(
-              fontSize: 30.0,
+              fontSize: 40.0,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
         const Align(
           alignment: Alignment.topLeft,
-          child: Text("Sleep data unavailable"),
+          child: Text("      Sleep data unavailable"),
         ),
+        _add(),
       ],
+    );
+  }
+  Widget _add(){
+    return Container(
+    padding: const EdgeInsets.all(30),
+    margin: const EdgeInsets.all(20),
+    width: double.infinity,
+    height: 300,
+    decoration: const BoxDecoration(
+      borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(20),
+        bottomRight: Radius.circular(20),
+        topLeft: Radius.circular(20),
+        topRight: Radius.circular(20),
+      ),
+      color: Colors.cyan
+    ),
+    child:  const Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        CircleAvatar(
+          radius: 120.0,
+          backgroundImage: AssetImage('bed.jpg'),
+        )
+      ],
+    ),
     );
   }
 
