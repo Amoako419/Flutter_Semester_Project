@@ -39,8 +39,10 @@ class Steps extends StatelessWidget {
 
   ////--- Start Monday --//////
   Widget _monday() {
-   return Container(
-
+   return const Column(
+    children: [
+      Text("Monday Demo")
+    ],
    );
   }
   ////--- End Monday --//////
@@ -49,15 +51,19 @@ class Steps extends StatelessWidget {
   ///
   ////--- Start Monday --//////
   Widget _tuesday() {
-   return Container(
-
+   return const Column(
+    children: [
+      Text("Tuesday Demo")
+    ],
    );
   }
   ////--- End Monday --//////
   ////--- Start Monday --//////
   Widget _wednesday() {
-   return Container(
-
+   return const Column(
+    children: [
+      Text("Wednesday Demo")
+    ],
    );
   }
   ////--- End Monday --//////
@@ -66,8 +72,10 @@ class Steps extends StatelessWidget {
   ///
   ////--- Start Monday --//////
   Widget _thursday() {
-   return Container(
-
+   return const Column(
+    children: [
+      Text("Thursday Demo")
+    ],
    );
   }
   ////--- End Monday --//////
@@ -76,8 +84,10 @@ class Steps extends StatelessWidget {
   ///
   ////--- Start Monday --//////
   Widget _friday() {
-   return Container(
-
+   return const Column(
+    children: [
+      Text("Friday Demo")
+    ],
    );
   }
   ////--- End Monday --//////
@@ -88,8 +98,10 @@ class Steps extends StatelessWidget {
   ///
   ////--- Start Monday --//////
   Widget _saturday() {
-   return Container(
-
+   return const Column(
+    children: [
+      Text("Saturday Demo")
+    ],
    );
   }
   ////--- End Monday --//////
@@ -97,8 +109,10 @@ class Steps extends StatelessWidget {
   ///
   ////--- Start Monday --//////
   Widget _sunday() {
-   return Container(
-
+   return const Column(
+    children: [
+      Text("Sunday Demo")
+    ],
    );
   }
   ////--- End Monday --//////
