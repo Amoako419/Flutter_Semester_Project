@@ -5,7 +5,10 @@ class Steps extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      home: DefaultTabController(
+        length: 7,
+        child: Scaffold(
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -14,7 +17,8 @@ class Steps extends StatelessWidget {
           },
         ),
         title: const Text("Steps"),
-        bottom: const TabBar(tabs: [
+        bottom: const TabBar(
+          tabs: [
           Tab(text: "M"),
           Tab(text: "T"),
           Tab(text: "W"),
@@ -23,9 +27,11 @@ class Steps extends StatelessWidget {
           Tab(text: "S"),
           Tab(text: "S"),
 
-        ]),
+        ]
+        ),
       ),
-      body: TabBarView(children: [
+      body: TabBarView(
+        children: [
            _monday(),
           _tuesday(),
           _wednesday(),
@@ -34,7 +40,7 @@ class Steps extends StatelessWidget {
           _saturday(),
           _sunday()
       ],)
-    );
+      )));
   }
 
   ////--- Start Monday --//////
