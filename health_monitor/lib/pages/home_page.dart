@@ -4,15 +4,18 @@ import 'package:health_monitor/pages/steps.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
+  
 
   @override
   State<StatefulWidget> createState() {
     return _HomePageState();
   }
+  
 }
 
 class _HomePageState extends State<Homepage> {
   _HomePageState();
+  
 
   @override
   Widget build(BuildContext context) {
@@ -285,13 +288,10 @@ class Favorite extends StatelessWidget{
   ),
   title: const Text("Favorites"),
 ),
-  body: const Column(
-    children: [
-      Center(child: Text("Your favorites are empty now"),
-      
-      ),
-    ],
-  ),
+  body: const Center(
+    child: Text("Your Favorites are empty"),
+    
+  )
     );
   }
 }

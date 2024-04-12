@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:health_monitor/pages/home_page.dart';
 
 void main() {
+  // ignore: unused_label
+  debugShowCheckedModeBanner:false;
   runApp(const MaterialApp(
      title: 'Health Monitor',
      home: Homepage(),
