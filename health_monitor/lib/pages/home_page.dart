@@ -46,6 +46,7 @@ class _HomePageState extends State<Homepage> {
         //home
         const BottomNavigationBarItem(icon: Icon(Icons.home),
         label: 'Home',
+        activeIcon: Icon(Icons.home_filled),
         ),
         //profile
         const BottomNavigationBarItem(icon: Icon(Icons.person_2_rounded),
@@ -63,6 +64,7 @@ class _HomePageState extends State<Homepage> {
           _space(),
           _button(),
           _space(),
+          _learnMore()
           
         ],
       ),
@@ -94,7 +96,22 @@ class _HomePageState extends State<Homepage> {
 //     ),
 //   );
 // }
-
+Widget _learnMore(){
+  return Container(
+    padding: const EdgeInsets.all(20),
+    margin: const EdgeInsets.all(20),
+    width: double.infinity,
+    height: 200,
+    decoration: const BoxDecoration(
+      borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(20),
+        bottomRight: Radius.circular(20),
+        topLeft: Radius.circular(20),
+        topRight: Radius.circular(20),
+      ),
+    ),
+    );
+}
 Widget _top() {
   return Container(
     padding: const EdgeInsets.all(20),
