@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:health_monitor/pages/home_page.dart';
 
 void main() {
-  runApp(const MaterialApp(
+  runApp( MaterialApp(
      title: 'Health Monitor',
      home: Homepage(),
      ));

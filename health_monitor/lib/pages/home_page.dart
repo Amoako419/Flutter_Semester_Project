@@ -6,8 +6,14 @@ import 'package:health_monitor/pages/sleep.dart';
 import 'package:health_monitor/pages/steps.dart';
 
 class Homepage extends StatefulWidget {
-  const Homepage({super.key});
+   Homepage({super.key});
   
+  final List _pages =[
+    const Favorite(),
+    Homepage(),
+    const Profile(),
+
+  ];
 
   @override
   State<StatefulWidget> createState() {
@@ -30,23 +36,26 @@ class _HomePageState extends State<Homepage> {
         
           
       ),
+      
       bottomNavigationBar: BottomNavigationBar(items: [
         //favorite
         const BottomNavigationBarItem(icon: Icon(Icons.favorite),
         label: 'Favorites',
+        
         ),
         //home
-        BottomNavigationBarItem(icon: Icon(Icons.home),
+        const BottomNavigationBarItem(icon: Icon(Icons.home),
         label: 'Home',
         ),
         //profile
-        BottomNavigationBarItem(icon: Icon(Icons.person_2_rounded),
+        const BottomNavigationBarItem(icon: Icon(Icons.person_2_rounded),
         label: 'Profile',
         ),
       ]),
       body: 
       SingleChildScrollView(
       child:Column(
+        
         children: [
           _top(),
           _space(),
@@ -57,7 +66,8 @@ class _HomePageState extends State<Homepage> {
           
         ],
       ),
-      )
+      
+      ),
     );
     
   }
