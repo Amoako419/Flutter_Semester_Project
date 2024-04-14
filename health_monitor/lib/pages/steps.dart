@@ -29,6 +29,33 @@ class Steps extends StatelessWidget {
 
         ]
         ),
+         actions: [
+IconButton(
+                  icon: const Icon(Icons.info),
+                  onPressed: () {
+                    // Show about sleep dialog
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: const Text('About Steps'),
+                          content: const Text(
+                            'Step count is the number of steps you take throughout the day. Pedometers and digital activity trackers can help you determine your step count. These devices count steps for any activity that involves step-like movement, including walking, running, stair-climbing, cross-country skiing, and even movement as you go about your daily chores.',
+                          ),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                ),
+                ],
       ),
       body: TabBarView(
         children: [

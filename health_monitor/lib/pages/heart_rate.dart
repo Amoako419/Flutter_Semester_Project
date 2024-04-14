@@ -14,6 +14,33 @@ class HeartRate extends StatelessWidget{
     },
   ),
   title: const Text("Heart Rate"),
+           actions: [
+IconButton(
+                  icon: const Icon(Icons.info),
+                  onPressed: () {
+                    // Show about sleep dialog
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: const Text('About HeartRate'),
+                          content: const Text(
+                            'Your heart beats approximately 100,000 times per day, accelerating and slowing through periods of rest and exertion. Your heart rate refers to how many times your heart beats per minute and can be an indicator of your cardiovascular health.Health visualises a history of the heart rate data collected by your smart Watch or a heart rate monitor so you can see your patterns and variability over time and with different activities.',
+                          ),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                ),
+                ],
 ),
   body: Column(
     children: [_pulseIm(),

@@ -26,6 +26,33 @@ class Sleep extends StatelessWidget {
                   Tab(text: "S"),
                   Tab(text: "S"),
                 ]),
+                actions: [
+IconButton(
+                  icon: const Icon(Icons.info),
+                  onPressed: () {
+                    // Show about sleep dialog
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: const Text('About Sleep'),
+                          content: const Text(
+                            'Sleep provides insight into your sleep habits.Sleep trackers and monitors can help you determine the amount of time you are in bed and asleep.These devices estimate your time in bed and your time asleep by analysing changes in physical activity, including movement during the night. You can also keep track of your sleep by entering your own estimation ofyour time in bed and time asleep manually.The In Bed period reflects the time period you are lying in bed with the intention to sleep. For most people, it starts when you turn the lights off and it ends when you get out of bed. The Asleep period reflects the period(s) you are asleep.',
+                          ),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                ),
+                ],
               ),
               body: TabBarView(
                 children: [
@@ -43,9 +70,8 @@ class Sleep extends StatelessWidget {
 
   ////--- Start Monday --//////
   Widget _monday() {
-    return 
-     SingleChildScrollView(
-      child:Column(
+    return SingleChildScrollView(
+        child: Column(
       children: [
         _space(),
         const Align(
@@ -63,43 +89,54 @@ class Sleep extends StatelessWidget {
           child: Text("      Sleep data unavailable"),
         ),
         _add(),
-        _about(),
+       
       ],
-   ));
+    ));
   }
-  Widget _add(){
+
+  Widget _add() {
     return Container(
-    padding: const EdgeInsets.all(30),
-    margin: const EdgeInsets.all(20),
-    width: double.infinity,
-    height: 300,
-    decoration: const BoxDecoration(
-      borderRadius: BorderRadius.only(
-        bottomLeft: Radius.circular(20),
-        bottomRight: Radius.circular(20),
-        topLeft: Radius.circular(20),
-        topRight: Radius.circular(20),
+      padding: const EdgeInsets.all(30),
+      margin: const EdgeInsets.all(20),
+      width: double.infinity,
+      height: 300,
+      decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+          color: Colors.cyan),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const CircleAvatar(
+            radius: 60.0,
+            backgroundImage: AssetImage('assets/images/bed.jpg'),
+          ),
+          const Align(
+            alignment: Alignment.topLeft,
+            child: Text(
+              "Set Up Sleep",
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
+            ),
+          ),
+          const Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                "Your devices can help you get better sleep and understand your sleep patterns",
+                style: TextStyle(fontSize: 12.0, color: Colors.black),
+              )),
+          ElevatedButton(
+              onPressed: () {},
+              child:
+                  const Text("Get started", style: TextStyle(fontSize: 15.1)))
+        ],
       ),
-      color: Colors.cyan
-    ),
-    child:   Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const CircleAvatar(
-          radius: 60.0,
-          backgroundImage: 
-          AssetImage('assets/images/bed.jpg'),
-        ),
-        const Align(
-        alignment: Alignment.topLeft,
-        child:  Text("Set Up Sleep",style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold,color: Colors.black),),),
-        const Align(
-          alignment: Alignment.topLeft,
-          child: Text("Your devices can help you get better sleep and understand your sleep patterns",style: TextStyle(fontSize: 12.0,color: Colors.black),)),
-          ElevatedButton(onPressed: (){}, child: const Text("Get started",style: TextStyle(fontSize:15.1)))
-      ],
-    ),
-    
     );
   }
 
@@ -109,17 +146,55 @@ class Sleep extends StatelessWidget {
   ///
   ////--- Start Monday --//////
   Widget _tuesday() {
-    return const Column(
-      children: [Text("Tuesday Demo")],
-    );
+     return SingleChildScrollView(
+        child: Column(
+      children: [
+        _space(),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            "  No Data",
+            style: TextStyle(
+              fontSize: 40.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text("      Sleep data unavailable"),
+        ),
+        _add(),
+        
+      ],
+    ));
   }
 
   ////--- End Monday --//////
   ////--- Start Monday --//////
   Widget _wednesday() {
-    return const Column(
-      children: [Text("Wednesday Demo")],
-    );
+     return SingleChildScrollView(
+        child: Column(
+      children: [
+        _space(),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            "  No Data",
+            style: TextStyle(
+              fontSize: 40.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text("      Sleep data unavailable"),
+        ),
+        _add(),
+        
+      ],
+    ));
   }
 
   ////--- End Monday --//////
@@ -128,9 +203,28 @@ class Sleep extends StatelessWidget {
   ///
   ////--- Start Monday --//////
   Widget _thursday() {
-    return const Column(
-      children: [Text("Thursday Demo")],
-    );
+     return SingleChildScrollView(
+        child: Column(
+      children: [
+        _space(),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            "  No Data",
+            style: TextStyle(
+              fontSize: 40.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text("      Sleep data unavailable"),
+        ),
+        _add(),
+        
+      ],
+    ));
   }
 
   ////--- End Monday --//////
@@ -139,9 +233,28 @@ class Sleep extends StatelessWidget {
   ///
   ////--- Start Monday --//////
   Widget _friday() {
-    return const Column(
-      children: [Text("Friday Demo")],
-    );
+     return SingleChildScrollView(
+        child: Column(
+      children: [
+        _space(),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            "  No Data",
+            style: TextStyle(
+              fontSize: 40.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text("      Sleep data unavailable"),
+        ),
+        _add(),
+        
+      ],
+    ));
   }
   ////--- End Monday --//////
   ///
@@ -151,9 +264,28 @@ class Sleep extends StatelessWidget {
   ///
   ////--- Start Monday --//////
   Widget _saturday() {
-    return const Column(
-      children: [Text("Saturday Demo")],
-    );
+     return SingleChildScrollView(
+        child: Column(
+      children: [
+        _space(),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            "  No Data",
+            style: TextStyle(
+              fontSize: 40.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text("      Sleep data unavailable"),
+        ),
+        _add(),
+        
+      ],
+    ));
   }
 
   ////--- End Monday --//////
@@ -161,9 +293,28 @@ class Sleep extends StatelessWidget {
   ///
   ////--- Start Monday --//////
   Widget _sunday() {
-    return const Column(
-      children: [Text("Sunday Demo")],
-    );
+     return SingleChildScrollView(
+        child: Column(
+      children: [
+        _space(),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            "  No Data",
+            style: TextStyle(
+              fontSize: 40.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text("      Sleep data unavailable"),
+        ),
+        _add(),
+        
+      ],
+    ));
   }
 
   ////--- End Monday --//////
@@ -174,34 +325,7 @@ class Sleep extends StatelessWidget {
       height: 30.0,
     );
   }
-  Widget _about(){
-    return Container(
-      child: Column(
-        children: [
-          Text("About Sleep"),
-          Container(
-             padding: const EdgeInsets.all(30),
-    margin: const EdgeInsets.all(20),
-    width: double.infinity,
-    height: 500,
-    decoration: const BoxDecoration(
-      borderRadius: BorderRadius.only(
-        bottomLeft: Radius.circular(20),
-        bottomRight: Radius.circular(20),
-        topLeft: Radius.circular(20),
-        topRight: Radius.circular(20),
-      ),
-      color: Colors.cyan
-          ),
-          child: const Column(
-            children: [
-              Text("Sleep provides insight into your sleep habits.Sleep trackers and monitors can help you determine the amount of time you are in bed and asleep.These devices estimate your time in bed and your time asleep by analysing changes in physical activity, including movement during the night. You can also keep track of your sleep by entering your own estimation ofyour time in bed and time asleep manually.The In Bed period reflects the time period you are lying in bed with the intention to sleep. For most people, it starts when you turn the lights off and it ends when you get out of bed. The Asleep period reflects the period(s) you are asleep.",style: TextStyle(fontSize: 16),)
-            ],
-          ),
-          )
 
-        ],
-      ),
-    );
-  }
+  
 }
+
