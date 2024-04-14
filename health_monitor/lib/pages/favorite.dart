@@ -11,12 +11,6 @@ class Favorite extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
     backgroundColor: Colors.red,
-  leading: IconButton(
-    icon: const Icon(Icons.home),
-    onPressed: () {
-      Navigator.pop(context);
-    },
-  ),
   title: const Text("Favorites"),
 ),
   body: const Center(

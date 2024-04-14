@@ -8,13 +8,6 @@ class Profile extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
     backgroundColor: Colors.green,
-  leading: IconButton(
-    icon: const Icon(Icons.home),
-    color: Colors.white,
-    onPressed: () {
-      Navigator.pop(context);
-    },
-  ),
   title: const Text("Profile",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
 ),
 body: Column(children: [
