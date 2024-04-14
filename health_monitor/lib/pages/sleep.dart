@@ -43,7 +43,9 @@ class Sleep extends StatelessWidget {
 
   ////--- Start Monday --//////
   Widget _monday() {
-    return Column(
+    return 
+     SingleChildScrollView(
+      child:Column(
       children: [
         _space(),
         const Align(
@@ -61,8 +63,9 @@ class Sleep extends StatelessWidget {
           child: Text("      Sleep data unavailable"),
         ),
         _add(),
+        _about(),
       ],
-    );
+   ));
   }
   Widget _add(){
     return Container(
@@ -96,6 +99,7 @@ class Sleep extends StatelessWidget {
           ElevatedButton(onPressed: (){}, child: const Text("Get started",style: TextStyle(fontSize:15.1)))
       ],
     ),
+    
     );
   }
 
@@ -168,6 +172,36 @@ class Sleep extends StatelessWidget {
   Widget _space() {
     return Container(
       height: 30.0,
+    );
+  }
+  Widget _about(){
+    return Container(
+      child: Column(
+        children: [
+          Text("About Sleep"),
+          Container(
+             padding: const EdgeInsets.all(30),
+    margin: const EdgeInsets.all(20),
+    width: double.infinity,
+    height: 500,
+    decoration: const BoxDecoration(
+      borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(20),
+        bottomRight: Radius.circular(20),
+        topLeft: Radius.circular(20),
+        topRight: Radius.circular(20),
+      ),
+      color: Colors.cyan
+          ),
+          child: const Column(
+            children: [
+              Text("Sleep provides insight into your sleep habits.Sleep trackers and monitors can help you determine the amount of time you are in bed and asleep.These devices estimate your time in bed and your time asleep by analysing changes in physical activity, including movement during the night. You can also keep track of your sleep by entering your own estimation ofyour time in bed and time asleep manually.The In Bed period reflects the time period you are lying in bed with the intention to sleep. For most people, it starts when you turn the lights off and it ends when you get out of bed. The Asleep period reflects the period(s) you are asleep.",style: TextStyle(fontSize: 16),)
+            ],
+          ),
+          )
+
+        ],
+      ),
     );
   }
 }

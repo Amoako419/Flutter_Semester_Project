@@ -21,8 +21,9 @@ class _FirstPageState extends State<FirstPage> {
   }
 
   final List _pages =[
+  
+    const Homepage(), 
     const Favorite(),
-    const Homepage(),
     const Profile(),
 
   ];
@@ -35,15 +36,15 @@ class _FirstPageState extends State<FirstPage> {
         currentIndex: _selectedIndex,
         onTap: _navigateBottomBar,
         items: const [
-        //favorite
-        BottomNavigationBarItem(icon: Icon(Icons.favorite),
-        label: 'Favorites',
-        
-        ),
+     
         //home
         BottomNavigationBarItem(icon: Icon(Icons.home),
         label: 'Home',
         activeIcon: Icon(Icons.home_filled),
+        
+        ),   //favorite
+        BottomNavigationBarItem(icon: Icon(Icons.favorite),
+        label: 'Favorites',
         
         ),
         //profile
