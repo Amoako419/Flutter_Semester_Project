@@ -1,19 +1,16 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:health_monitor/pages/favorite.dart';
 import 'package:health_monitor/pages/heart_rate.dart';
+import 'package:health_monitor/pages/profile.dart';
 import 'package:health_monitor/pages/sleep.dart';
 import 'package:health_monitor/pages/steps.dart';
 
 class Homepage extends StatefulWidget {
-   Homepage({super.key});
+   const Homepage({super.key});
   
-  final List _pages =[
-    const Favorite(),
-    Homepage(),
-    const Profile(),
 
-  ];
 
   @override
   State<StatefulWidget> createState() {
@@ -24,6 +21,7 @@ class Homepage extends StatefulWidget {
 
 class _HomePageState extends State<Homepage> {
   _HomePageState();
+
   
 
   @override
@@ -36,23 +34,7 @@ class _HomePageState extends State<Homepage> {
         
           
       ),
-      
-      bottomNavigationBar: BottomNavigationBar(items: [
-        //favorite
-        const BottomNavigationBarItem(icon: Icon(Icons.favorite),
-        label: 'Favorites',
-        
-        ),
-        //home
-        const BottomNavigationBarItem(icon: Icon(Icons.home),
-        label: 'Home',
-        activeIcon: Icon(Icons.home_filled),
-        ),
-        //profile
-        const BottomNavigationBarItem(icon: Icon(Icons.person_2_rounded),
-        label: 'Profile',
-        ),
-      ]),
+  
       body: 
       SingleChildScrollView(
       child:Column(
@@ -96,22 +78,7 @@ class _HomePageState extends State<Homepage> {
 //     ),
 //   );
 // }
-Widget _learnMore(){
-  return Container(
-    padding: const EdgeInsets.all(20),
-    margin: const EdgeInsets.all(20),
-    width: double.infinity,
-    height: 200,
-    decoration: const BoxDecoration(
-      borderRadius: BorderRadius.only(
-        bottomLeft: Radius.circular(20),
-        bottomRight: Radius.circular(20),
-        topLeft: Radius.circular(20),
-        topRight: Radius.circular(20),
-      ),
-    ),
-    );
-}
+
 Widget _top() {
   return Container(
     padding: const EdgeInsets.all(20),
@@ -266,7 +233,7 @@ Widget _end() {
        onPressed: () {
         // Favorites page
         Navigator.push(context, 
-        MaterialPageRoute(builder: (context)=> const Favorite()));
+        MaterialPageRoute(builder: (context)=>  Favorite()));
         },
       ),
       const SizedBox(width: 10.0),
@@ -297,6 +264,40 @@ Widget _end() {
 
 /////////////////// HeartRate Start //////////////////////////////////
 // 
+Widget _learnMore(){
+    return Container(
+    padding: const EdgeInsets.all(30),
+    margin: const EdgeInsets.all(20),
+    width: double.infinity,
+    height: 300,
+    decoration: const BoxDecoration(
+      borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(20),
+        bottomRight: Radius.circular(20),
+        topLeft: Radius.circular(20),
+        topRight: Radius.circular(20),
+      ),
+      color: Colors.cyan
+    ),
+    child:   Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const CircleAvatar(
+          radius: 60.0,
+          backgroundImage: 
+          AssetImage('assets/images/medical_ID.png'),
+        ),
+        const Align(
+        alignment: Alignment.topLeft,
+        child:  Text("Set Up Sleep",style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold,color: Colors.black),),),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text("Your devices can help you get better sleep and understand your sleep patterns",style: TextStyle(fontSize: 12.0,color: Colors.black),)),
+          ElevatedButton(onPressed: (){}, child: const Text("Get started",style: TextStyle(fontSize:15.1)))
+      ],
+    ),
+    );
+  }
 /////////////////// HeartRate End //////////////////////////////////
 
 
@@ -312,29 +313,7 @@ Widget _end() {
 ///
 ///
 ////////////////////// Favorite Start //////////////////////////////////
-class Favorite extends StatelessWidget{
-  const Favorite({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-    backgroundColor: Colors.red,
-  leading: IconButton(
-    icon: const Icon(Icons.home),
-    onPressed: () {
-      Navigator.pop(context);
-    },
-  ),
-  title: const Text("Favorites"),
-),
-  body: const Center(
-    child: Text("Your Favorites are empty"),
-    
-  )
-    );
-  }
-}
 
 ////////////////////// Favorite End //////////////////////////////////
 ///
@@ -342,106 +321,5 @@ class Favorite extends StatelessWidget{
 ///
 ///////////////////////// Profile Start //////////////////////////////////
 
-class Profile extends StatelessWidget{
-  const Profile({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-    backgroundColor: Colors.green,
-  leading: IconButton(
-    icon: const Icon(Icons.home),
-    color: Colors.white,
-    onPressed: () {
-      Navigator.pop(context);
-    },
-  ),
-  title: const Text("Profile",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-),
-body: Column(children: [
-    _avatar(),
-    _ProfileInfo(),
-    _edit(),
-]),
-    );
-  }
 
-  // ignore: non_constant_identifier_names
-  Widget _ProfileInfo(){
-return Form(
-  child: Column(
-    children: [
-      TextFormField(
-        readOnly: true,
-        initialValue: 'Steve Jobs',
-        decoration: const InputDecoration(
-          labelText: 'Name',
-        ),
-      ),
-      
-      TextFormField(
-         readOnly: true,
-        initialValue: 'steve.jobs@icloud.com',
-        decoration: const InputDecoration(
-          labelText: 'Email',
-        ),
-      ),
-
-      TextFormField(
-         readOnly: true,
-        initialValue: '55' ,
-        decoration: const InputDecoration(
-          labelText: 'Age',
-        ),
-      ),
-
-       TextFormField(
-          readOnly: true,
-        initialValue: '3-10-1979',
-        decoration: const InputDecoration(
-          labelText: 'Date of Birth',
-        ),
-      ),
-
-       TextFormField(
-          readOnly: true,
-        initialValue: '68kg',
-        decoration: const InputDecoration(
-          labelText: 'Weight',
-        ),
-      ),
-       TextFormField(
-          readOnly: true,
-        initialValue: '68cm',
-        decoration: const InputDecoration(
-          labelText: 'Height',
-        ),
-      ),
-    ],
-  ),
-);
-}
-
-Widget _avatar(){
-  return const Column( 
-    children:[ Center(
-    child: CircleAvatar(
-      radius: 95.0,
-      backgroundImage: 
-      AssetImage('assets/images/jobs.JPG'),
-      ),
-  ),Text("change picture", style: TextStyle(color: Colors.blue,))
-  ]
-  );
-}
-
-Widget _edit(){
-  return ElevatedButton(onPressed: (){}, 
-  style: ButtonStyle(
-    backgroundColor: MaterialStateProperty.all(Colors.green)
-  ),child: const Text("Edit details")
-  );
-}
-
-}
