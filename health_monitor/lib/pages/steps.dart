@@ -66,15 +66,22 @@ IconButton(
           _friday(),
           _saturday(),
           _sunday()
-      ],)
-      )));
+      ],),
+         floatingActionButton: const FloatingActionButton(
+        tooltip: 'favorite', // used by assistive technologies
+        onPressed: null,
+        child: Icon(Icons.favorite),
+      ),
+      )
+      )
+      );
   }
 
   ////--- Start Monday --//////
   Widget _monday() {
-   return const Column(
+   return  Column(
     children: [
-      Text("Monday Demo")
+      _daily(),
     ],
    );
   }
@@ -149,4 +156,30 @@ IconButton(
    );
   }
   ////--- End Monday --//////
+  ///
+  ///
+  ///
+  ///
+  ///DailyWidget
+  Widget _daily(){
+    return Container(
+      width: double.infinity,
+      height: 300.0,
+      margin: EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(border: Border.all(color: const Color.fromARGB(255, 59, 55, 55),width: 2.0),
+      borderRadius: BorderRadiusDirectional.circular(20),
+      color: Color.fromARGB(255, 192, 196, 196)
+      
+      ),
+    child: Column(
+      children: [
+        Row(
+          children:[IconButton(onPressed: (){}, icon: Icon(Icons.donut_large),color: Colors.pink,),
+        Text("Steps",style: TextStyle(color: Colors.pink),),])
+      ],
+    ),
+      
+    );
+  }
 }

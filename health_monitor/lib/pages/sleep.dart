@@ -65,7 +65,15 @@ IconButton(
                   _sunday()
                 ],
               ),
-            )));
+                 floatingActionButton: const FloatingActionButton(
+        tooltip: 'favorite', // used by assistive technologies
+        onPressed: null,
+        child: Icon(Icons.favorite_outline),
+      ),
+            )
+            ),
+            
+            );
   }
 
   ////--- Start Monday --//////

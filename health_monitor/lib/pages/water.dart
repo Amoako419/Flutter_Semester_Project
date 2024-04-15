@@ -46,6 +46,16 @@ IconButton(
                 ),
                 ],
       ),
+                  body: SingleChildScrollView(
+                    child: Column(
+                      children: [],
+                    ),
+                  ),
+                     floatingActionButton: const FloatingActionButton(
+        tooltip: 'favorite', // used by assistive technologies
+        onPressed: null,
+        child: Icon(Icons.favorite_outline),
+      ),
     );
   }
 

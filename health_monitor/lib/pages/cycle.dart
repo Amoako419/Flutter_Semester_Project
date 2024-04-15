@@ -51,7 +51,15 @@ IconButton(
         child: Column(
           children: [_cycle()],
         ),
-      )
+        
+      
+      ),
+      floatingActionButton: const FloatingActionButton(
+        tooltip: 'favorite', // used by assistive technologies
+        onPressed: null,
+        child: Icon(Icons.favorite_outline),
+      ),
+      
       
     );
   }
@@ -112,4 +120,6 @@ onPressed: () {
     ),
   );
 }
+
+
 }
