@@ -165,21 +165,27 @@ IconButton(
     return Container(
       width: double.infinity,
       height: 300.0,
-      margin: EdgeInsets.all(20),
-      padding: EdgeInsets.all(20),
+      margin: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(border: Border.all(color: const Color.fromARGB(255, 59, 55, 55),width: 2.0),
       borderRadius: BorderRadiusDirectional.circular(20),
-      color: Color.fromARGB(255, 192, 196, 196)
+      color: const Color.fromARGB(255, 234, 240, 240)
       
       ),
     child: Column(
       children: [
         Row(
-          children:[IconButton(onPressed: (){}, icon: Icon(Icons.donut_large),color: Colors.pink,),
-        Text("Steps",style: TextStyle(color: Colors.pink),),])
+          children:[IconButton(onPressed: (){}, icon: const Icon(Icons.donut_large),color: Colors.pink,),
+        const Text("Steps",style: TextStyle(color: Colors.pink,fontSize: 16.0),),]),
+        const Text("So far,you are taking more steps than you normally do",style: TextStyle(fontSize: 18.0),),
+        const Text("30 steps",style: TextStyle(color: Colors.pink,fontSize:22.0)),
+        const LinearProgressIndicator(
+        value: 0.8,
+        
+      )
       ],
     ),
-      
+     
     );
   }
 }
