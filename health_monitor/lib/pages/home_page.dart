@@ -1,11 +1,13 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:health_monitor/pages/favorite.dart';
 import 'package:health_monitor/pages/heart_rate.dart';
 import 'package:health_monitor/pages/profile.dart';
 import 'package:health_monitor/pages/sleep.dart';
 import 'package:health_monitor/pages/steps.dart';
+import 'package:health_monitor/pages/water.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -42,7 +44,10 @@ class _HomePageState extends State<Homepage> {
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
               ),
             ),
-            _learnMore()
+            _learnMore(),
+            _space(),
+            _water(),
+
           ],
         ),
       ),
@@ -230,7 +235,7 @@ class _HomePageState extends State<Homepage> {
               onPressed: () {
                 // Favorites page
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Favorite()));
+                    MaterialPageRoute(builder: (context) => const Favorite()));
               },
             ),
             const SizedBox(width: 10.0),
@@ -260,7 +265,7 @@ class _HomePageState extends State<Homepage> {
           ],
         ));
   }
-}
+
 
 /////////////////// HeartRate Start //////////////////////////////////
 //
@@ -310,9 +315,64 @@ Widget _learnMore() {
 }
 /////////////////// HeartRate End //////////////////////////////////
 
-/////////////////// Steps Start //////////////////////////////////
+/////////////////// water Start //////////////////////////////////
+Widget _water() {
+  return Container(
+    padding: const EdgeInsets.all(30),
+    margin: const EdgeInsets.all(20),
+    width: double.infinity,
+    height: 300,
+    decoration: const BoxDecoration(
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20),
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+        color: Colors.grey),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const CircleAvatar(
+          radius: 60.0,
+          backgroundImage: AssetImage('assets/images/medical_ID.png'),
+        ),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            "Water Intake",
+            style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.black),
+          ),
+        ),
+        const Align(
+            alignment: Alignment.topLeft,
+            child: Text(
+              "In an emergency,first responders can look at your medical ID to get life_saving information",
+              style: TextStyle(fontSize: 12.0, color: Colors.black),
+            )),
+        ElevatedButton(
+onPressed: () {
+  // Data to pass to the Water page
+// Replace with your actual data
 
-/////////////////// Steps End //////////////////////////////////
+  Navigator.push(
+    context,
+    CupertinoPageRoute(
+      builder: (context) => const Water(), // Pass data using constructor
+    ),
+  );
+},
+
+    child: const Text("Get started", style: TextStyle(fontSize: 15.1, color: Colors.red)),
+)
+      ],
+    ),
+  );
+}
+/////////////////// water End //////////////////////////////////
 
 /////////////////// Sleep Start //////////////////////////////////
 
@@ -327,3 +387,4 @@ Widget _learnMore() {
 ///
 ///
 ///////////////////////// Profile Start //////////////////////////////////
+}

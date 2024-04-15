@@ -12,56 +12,39 @@ class _WaterState extends State<Water> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back_ios_new),
+        leading: const Icon(Icons.arrow_back_ios_new),
         title: Text("Water Intake"),
-        
+                   actions: [
+IconButton(
+                  icon: const Icon(Icons.info),
+                  onPressed: () {
+                    // Show about sleep dialog
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: const Text('About Sleep'),
+                          content: const Text(
+                            'Sleep provides insight into your sleep habits.Sleep trackers and monitors can help you determine the amount of time you are in bed and asleep.These devices estimate your time in bed and your time asleep by analysing changes in physical activity, including movement during the night. You can also keep track of your sleep by entering your own estimation ofyour time in bed and time asleep manually.The In Bed period reflects the time period you are lying in bed with the intention to sleep. For most people, it starts when you turn the lights off and it ends when you get out of bed. The Asleep period reflects the period(s) you are asleep.',
+                          ),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                ),
+                ],
       ),
     );
   }
 
 
-  Widget _learnMore() {
-  return Container(
-    padding: const EdgeInsets.all(30),
-    margin: const EdgeInsets.all(20),
-    width: double.infinity,
-    height: 300,
-    decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(20),
-          bottomRight: Radius.circular(20),
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
-        ),
-        color: Colors.grey),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const CircleAvatar(
-          radius: 60.0,
-          backgroundImage: AssetImage('assets/images/medical_ID.png'),
-        ),
-        const Align(
-          alignment: Alignment.topLeft,
-          child: Text(
-            "Set Up Medical ID",
-            style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black),
-          ),
-        ),
-        const Align(
-            alignment: Alignment.topLeft,
-            child: Text(
-              "In an emergency,first responders can look at your medical ID to get life_saving information",
-              style: TextStyle(fontSize: 12.0, color: Colors.black),
-            )),
-        ElevatedButton(
-            onPressed: () {},
-            child: const Text("Get started", style: TextStyle(fontSize: 15.1,color: Colors.red),))
-      ],
-    ),
-  );
-}
+  
 }
