@@ -47,6 +47,8 @@ class _HomePageState extends State<Homepage> {
             _learnMore(),
             _space(),
             _water(),
+            _space(),
+            _cycle()
 
           ],
         ),
@@ -374,9 +376,64 @@ onPressed: () {
 }
 /////////////////// water End //////////////////////////////////
 
-/////////////////// Sleep Start //////////////////////////////////
+/////////////////// Cycle tracking Start //////////////////////////////////
+Widget _cycle() {
+  return Container(
+    padding: const EdgeInsets.all(30),
+    margin: const EdgeInsets.all(20),
+    width: double.infinity,
+    height: 300,
+    decoration: const BoxDecoration(
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20),
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+        color: Colors.grey),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const CircleAvatar(
+          radius: 60.0,
+          backgroundImage: AssetImage('assets/images/cycle.jpg'),
+        ),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            "Cycle tracking",
+            style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.black),
+          ),
+        ),
+        const Align(
+            alignment: Alignment.topLeft,
+            child: Text(
+              "In an emergency,first responders can look at your medical ID to get life_saving information",
+              style: TextStyle(fontSize: 12.0, color: Colors.black),
+            )),
+        ElevatedButton(
+onPressed: () {
+  // Data to pass to the Water page
+// Replace with your actual data
 
-/////////////////// Sleep End //////////////////////////////////
+  Navigator.push(
+    context,
+    CupertinoPageRoute(
+      builder: (context) => const Water(), // Pass data using constructor
+    ),
+  );
+},
+
+    child: const Text("Get started", style: TextStyle(fontSize: 15.1, color: Colors.red)),
+)
+      ],
+    ),
+  );
+}
+/////////////////// Cycle tracking End //////////////////////////////////
 ///
 ///
 ///

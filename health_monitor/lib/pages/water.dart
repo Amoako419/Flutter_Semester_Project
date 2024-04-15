@@ -12,7 +12,11 @@ class _WaterState extends State<Water> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back_ios_new),
+        leading: IconButton(
+                  icon: const Icon(Icons.arrow_back),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },),
         title: Text("Water Intake"),
                    actions: [
 IconButton(
