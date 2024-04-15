@@ -17,7 +17,7 @@ class _WaterState extends State<Water> {
                   onPressed: () {
                     Navigator.pop(context);
                   },),
-        title: Text("Water Intake"),
+        title: const Text("Water Intake"),
                    actions: [
 IconButton(
                   icon: const Icon(Icons.info),
@@ -27,9 +27,9 @@ IconButton(
                       context: context,
                       builder: (context) {
                         return AlertDialog(
-                          title: const Text('About Sleep'),
+                          title: const Text('About Water Intake'),
                           content: const Text(
-                            'Sleep provides insight into your sleep habits.Sleep trackers and monitors can help you determine the amount of time you are in bed and asleep.These devices estimate your time in bed and your time asleep by analysing changes in physical activity, including movement during the night. You can also keep track of your sleep by entering your own estimation ofyour time in bed and time asleep manually.The In Bed period reflects the time period you are lying in bed with the intention to sleep. For most people, it starts when you turn the lights off and it ends when you get out of bed. The Asleep period reflects the period(s) you are asleep.',
+                            'For your body to function properly, you must replenish its water supply by consuming beverages and foods that contain water. You may need to modify your total fluid intake depending on how active you are, the climate you live in, your health status, and if you are pregnant or breastfeeding. Food provides about 20 per cent of total water intake. Many fruits and vegetables, such as watermelon and spinach, are 90 per cent or more water by weight.',
                           ),
                           actions: [
                             TextButton(

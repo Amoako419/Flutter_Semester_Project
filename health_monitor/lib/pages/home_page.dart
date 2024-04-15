@@ -218,55 +218,55 @@ class _HomePageState extends State<Homepage> {
   //     ],
   //   );
   // }
-  Widget _end() {
-    return Positioned(
-        bottom: 0,
-        right: 0,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            const SizedBox(
-              width: 10.0,
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.favorite,
-                color: Colors.red,
-                size: 40,
-              ),
-              onPressed: () {
-                // Favorites page
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Favorite()));
-              },
-            ),
-            const SizedBox(width: 10.0),
-            IconButton(
-              icon: const Icon(
-                Icons.home,
-                color: Colors.blue,
-                size: 40,
-              ),
-              onPressed: () {
-                // Do something
-              },
-            ),
-            const SizedBox(width: 10.0),
-            IconButton(
-              icon: const Icon(
-                Icons.person_3_rounded,
-                color: Colors.green,
-                size: 40,
-              ),
-              onPressed: () {
-                // Favorites page
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Profile()));
-              },
-            ),
-          ],
-        ));
-  }
+  // Widget _end() {
+  //   return Positioned(
+  //       bottom: 0,
+  //       right: 0,
+  //       child: Row(
+  //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //         children: [
+  //           const SizedBox(
+  //             width: 10.0,
+  //           ),
+  //           IconButton(
+  //             icon: const Icon(
+  //               Icons.favorite,
+  //               color: Colors.red,
+  //               size: 40,
+  //             ),
+  //             onPressed: () {
+  //               // Favorites page
+  //               Navigator.push(context,
+  //                   MaterialPageRoute(builder: (context) => const Favorite()));
+  //             },
+  //           ),
+  //           const SizedBox(width: 10.0),
+  //           IconButton(
+  //             icon: const Icon(
+  //               Icons.home,
+  //               color: Colors.blue,
+  //               size: 40,
+  //             ),
+  //             onPressed: () {
+  //               // Do something
+  //             },
+  //           ),
+  //           const SizedBox(width: 10.0),
+  //           IconButton(
+  //             icon: const Icon(
+  //               Icons.person_3_rounded,
+  //               color: Colors.green,
+  //               size: 40,
+  //             ),
+  //             onPressed: () {
+  //               // Favorites page
+  //               Navigator.push(context,
+  //                   MaterialPageRoute(builder: (context) => const Profile()));
+  //             },
+  //           ),
+  //         ],
+  //       ));
+  // }
 
 
 /////////////////// HeartRate Start //////////////////////////////////
@@ -337,7 +337,7 @@ Widget _water() {
       children: [
         const CircleAvatar(
           radius: 60.0,
-          backgroundImage: AssetImage('assets/images/medical_ID.png'),
+          backgroundImage: AssetImage('assets/images/water.png'),
         ),
         const Align(
           alignment: Alignment.topLeft,

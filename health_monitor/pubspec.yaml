@@ -71,6 +71,8 @@ flutter:
     - assets/images/medication.jpg
     - assets/images/medical_ID.png
     - assets/images/cycle.jpg
+    - assets/images/water.png
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
