@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:health_monitor/pages/cycle.dart';
 import 'package:health_monitor/pages/favorite.dart';
 import 'package:health_monitor/pages/heart_rate.dart';
 import 'package:health_monitor/pages/medicalID.dart';
@@ -428,7 +429,7 @@ onPressed: () {
   Navigator.push(
     context,
     CupertinoPageRoute(
-      builder: (context) => const Water(), // Pass data using constructor
+      builder: (context) => const cycleTracker(), // Pass data using constructor
     ),
   );
 },
