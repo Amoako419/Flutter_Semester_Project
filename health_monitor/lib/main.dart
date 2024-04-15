@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:health_monitor/pages/firstPage.dart';
+import 'package:health_monitor/pages/medicalID.dart';
 
 
 void main() {
@@ -19,6 +20,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 return  MaterialApp(
       debugShowCheckedModeBanner:false,
+      initialRoute: '/',
+      routes: {
+        '/':(context) => FormPage()
+      },
       title: 'Health Monitor',
       home: FirstPage(),
     );

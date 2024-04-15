@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:health_monitor/pages/favorite.dart';
 import 'package:health_monitor/pages/heart_rate.dart';
+import 'package:health_monitor/pages/medicalID.dart';
 import 'package:health_monitor/pages/profile.dart';
 import 'package:health_monitor/pages/sleep.dart';
 import 'package:health_monitor/pages/steps.dart';
@@ -309,7 +310,12 @@ Widget _learnMore() {
               style: TextStyle(fontSize: 12.0, color: Colors.black),
             )),
         ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context)=> FormPage())
+              );
+            },
             child: const Text("Get started", style: TextStyle(fontSize: 15.1,color: Colors.red),))
       ],
     ),

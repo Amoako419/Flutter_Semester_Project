@@ -24,13 +24,13 @@ class _FirstPageState extends State<FirstPage> {
   
     const Homepage(), 
     const Favorite(),
-    const Profile(),
+    const Profile(name: '',email: '',age: '',bloodType: '',emergencyContactNumber: '',emergencyContactName: '',weight: '',height: '',),
 
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+       
      
       body: _pages[_selectedIndex],
        bottomNavigationBar: BottomNavigationBar(

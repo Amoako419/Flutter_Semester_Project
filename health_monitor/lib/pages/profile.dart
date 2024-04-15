@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:health_monitor/pages/medicalID.dart';
 
 class Profile extends StatelessWidget {
-  const Profile({super.key});
+  final String name;
+  final String email;
+  final  age;
+  final String bloodType;
+  final emergencyContactName;
+  final emergencyContactNumber; 
+  final weight;
+  final height;
+
+  const Profile({super.key, Key, required this.name ,required this.email, required this.age, required this.bloodType, required this.emergencyContactName, required this.emergencyContactNumber, required this.weight, required this.height});
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +39,14 @@ class Profile extends StatelessWidget {
         children: [
           TextFormField(
             readOnly: true,
-            initialValue: 'Steve Jobs',
+            initialValue: name,
             decoration: const InputDecoration(
               labelText: 'Name',
             ),
           ),
           TextFormField(
             readOnly: true,
-            initialValue: 'steve.jobs@icloud.com',
+            initialValue: email,
             decoration: const InputDecoration(
               labelText: 'Email',
             ),
@@ -50,35 +60,28 @@ class Profile extends StatelessWidget {
           ),
           TextFormField(
             readOnly: true,
-            initialValue: '55',
+            initialValue: age,
             decoration: const InputDecoration(
               labelText: 'Age',
             ),
           ),
           TextFormField(
             readOnly: true,
-            initialValue: '3-10-1979',
-            decoration: const InputDecoration(
-              labelText: 'Date of Birth',
-            ),
-          ),
-          TextFormField(
-            readOnly: true,
-            initialValue: '68kg',
+            initialValue: weight,
             decoration: const InputDecoration(
               labelText: 'Weight',
             ),
           ),
           TextFormField(
             readOnly: true,
-            initialValue: '68cm',
+            initialValue: height,
             decoration: const InputDecoration(
               labelText: 'Height',
             ),
           ),
           TextFormField(
             readOnly: true,
-            initialValue: 'Not set',
+            initialValue: bloodType,
             decoration: const InputDecoration(
               labelText: 'Blood Type',
             ),
@@ -89,16 +92,16 @@ class Profile extends StatelessWidget {
           ),
           TextFormField(
             readOnly: true,
-            initialValue: 'Not set',
+            initialValue: emergencyContactName,
             decoration: const InputDecoration(
-              labelText: 'Emergency Contact1',
+              labelText: 'Emergency Name',
             ),
           ),
           TextFormField(
             readOnly: true,
-            initialValue: 'Not set',
+            initialValue: emergencyContactNumber,
             decoration: const InputDecoration(
-              labelText: 'Emergency Contact2',
+              labelText: 'Emergency Contact',
             ),
           ),
         ],
@@ -123,7 +126,10 @@ class Profile extends StatelessWidget {
 
   Widget _edit() {
     return ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+        //   Navigator.push(context, 
+        //  MaterialPageRoute(builder: (context)=> FormPage()));
+        },
         style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(Colors.green)),
         child: const Text("Edit details"));
