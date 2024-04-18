@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:health_monitor/pages/medicalID.dart';
 
 class Profile extends StatelessWidget {
   final String name;

@@ -3,10 +3,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:health_monitor/pages/cycle.dart';
-import 'package:health_monitor/pages/favorite.dart';
 import 'package:health_monitor/pages/heart_rate.dart';
 import 'package:health_monitor/pages/medicalID.dart';
-import 'package:health_monitor/pages/profile.dart';
 import 'package:health_monitor/pages/sleep.dart';
 import 'package:health_monitor/pages/steps.dart';
 import 'package:health_monitor/pages/water.dart';
