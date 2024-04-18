@@ -5,9 +5,9 @@ class Profile extends StatelessWidget {
   final String email;
   final  age;
   final String bloodType;
-  final emergencyContactName;
-  final emergencyContactNumber; 
-  final weight;
+  final String emergencyContactName;
+  final String emergencyContactNumber; 
+  final String weight;
   final height;
 
   const Profile({super.key, Key, required this.name ,required this.email, required this.age, required this.bloodType, required this.emergencyContactName, required this.emergencyContactNumber, required this.weight, required this.height});
