@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class cycleTracker extends StatefulWidget {
   const cycleTracker({super.key});
 
