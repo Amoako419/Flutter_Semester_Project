@@ -8,8 +8,8 @@ class TimePickerWidget extends StatefulWidget {
 }
 
 class _TimePickerWidgetState extends State<TimePickerWidget> {
-    TimeOfDay _time = const TimeOfDay(hour: 10, minute: 30);
-    TimeOfDay _ime = const TimeOfDay(hour: 10, minute: 30);
+ TimeOfDay _time = const TimeOfDay(hour: 10, minute: 30);
+  TimeOfDay _time2 = const TimeOfDay(hour: 12, minute: 00);
 
     void _showTimePicker() {
     showTimePicker(
@@ -24,20 +24,17 @@ class _TimePickerWidgetState extends State<TimePickerWidget> {
     });
     }
 
-        // ignore: non_constant_identifier_names
-        void _TimePicker() {
+    void _TimePicker() {
     showTimePicker(
         context: context,
-        initialTime: _ime,
-    ).then((nTime) {
-        if (nTime != null) {
+        initialTime: _time2,
+    ).then((newTime) {
+        if (newTime != null) {
         setState(() {
-            _ime = nTime;
+            _time2 = newTime;
         });
         }
-    });
-    }
-
+    });}
     @override
     Widget build(BuildContext context) {
     return Scaffold(
@@ -68,13 +65,13 @@ class _TimePickerWidgetState extends State<TimePickerWidget> {
         color: Color.fromARGB(255, 230, 221, 221)),
         child: Column(
           children: [
-             Text('From: ${_time.hour}:${_time.minute}'),
+             Text('From: ${_time.hour}:${_time.minute}',style: const TextStyle(fontSize: 28.0,fontWeight: FontWeight.bold),),
         ElevatedButton(
             onPressed: _showTimePicker,
             child: const Text('Pick Time'),
         ),
-        Padding(padding: EdgeInsets.all(20)),
-              Text('To: ${_time.hour}:${_time.minute}'),
+        Padding(padding: EdgeInsets.all(10)),
+              Text('To: ${_time2.hour}:${_time2.minute}',style: const TextStyle(fontSize: 28.0,fontWeight: FontWeight.bold),),
         ElevatedButton(
             onPressed: _TimePicker,
             child: const Text('Pick Time'),
