@@ -38,7 +38,40 @@ class _TimePickerWidgetState extends State<TimePickerWidget> {
         });
         }
     });}
-      bool switchValue = true;
+      bool switchValue = false;
+
+      void _snackB(){
+        if (switchValue == true){
+              final snackBar = SnackBar(
+            content: const Text('You will be notified'),
+            action: SnackBarAction(
+              label: 'Done',
+              onPressed: () {
+                // Some code to undo the change.
+              },
+            ),
+          );
+
+          // Find the ScaffoldMessenger in the widget tree
+          // and use it to show a SnackBar.
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        }
+        else{
+              final snackBar = SnackBar(
+            content: const Text('You will not be notified'),
+            action: SnackBarAction(
+              label: 'Done',
+              onPressed: () {
+                // Some code to undo the change.
+              },
+            ),
+          );
+
+          // Find the ScaffoldMessenger in the widget tree
+          // and use it to show a SnackBar.
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        }
+      }
   
     @override
     Widget build(BuildContext context) {
@@ -116,10 +149,12 @@ class _TimePickerWidgetState extends State<TimePickerWidget> {
     primary: Colors.blue,
     onPrimary: Colors.white,
     shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(12),
     ),
     ),
-    onPressed: () {},
+    onPressed: () {
+      _snackB();
+    },
     child: const Text('Save'),
 )
 
