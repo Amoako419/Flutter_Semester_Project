@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:health_monitor/pages/timepicker.dart';
 
-class Sleep extends StatelessWidget {
+class Sleep extends StatefulWidget {
   const Sleep({super.key});
 
+  @override
+  State<Sleep> createState() => _SleepState();
+}
+
+class _SleepState extends State<Sleep> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -74,35 +80,10 @@ IconButton(
             ),
             
             );
+            
   }
 
-  ////--- Start Monday --//////
-  Widget _monday() {
-    return SingleChildScrollView(
-        child: Column(
-      children: [
-        _space(),
-        const Align(
-          alignment: Alignment.topLeft,
-          child: Text(
-            "  No Data",
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        const Align(
-          alignment: Alignment.topLeft,
-          child: Text("      Sleep data unavailable"),
-        ),
-        _add(),
-       
-      ],
-    ));
-  }
-
-  Widget _add() {
+    Widget _add() {
     return Container(
       padding: const EdgeInsets.all(30),
       margin: const EdgeInsets.all(20),
@@ -140,12 +121,43 @@ IconButton(
                 style: TextStyle(fontSize: 12.0, color: Colors.black),
               )),
           ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                 Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context)=> const TimePickerWidget())
+              );
+              },
               child:
                   const Text("Get started", style: TextStyle(fontSize: 15.1)))
         ],
       ),
     );
+  }
+
+  ////--- Start Monday --//////
+  Widget _monday() {
+    return SingleChildScrollView(
+        child: Column(
+      children: [
+        _space(),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            "  No Data",
+            style: TextStyle(
+              fontSize: 40.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text("      Sleep data unavailable"),
+        ),
+        _add(),
+       
+      ],
+    ));
   }
 
   ////--- End Monday --//////
@@ -264,6 +276,7 @@ IconButton(
       ],
     ));
   }
+
   ////--- End Monday --//////
   ///
   ///
@@ -333,7 +346,5 @@ IconButton(
       height: 30.0,
     );
   }
-
-  
 }
 
