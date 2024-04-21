@@ -83,6 +83,7 @@ class _StepsState extends State<Steps> {
     return Column(
       children: [
         _daily(500),
+        
       ],
     );
   }
@@ -187,6 +188,7 @@ class _StepsState extends State<Steps> {
               onPressed: () {},
               icon: const Icon(Icons.donut_large),
               color: Colors.pink,
+              iconSize: 30.0,
             ),
             Text(
               "Steps",
@@ -211,22 +213,35 @@ class _StepsState extends State<Steps> {
     );
   }
 
-  Widget _highlight(){
-    return Container(
-      width: double.infinity,
-      height: 300.0,
-      margin: const EdgeInsets.all(20),
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-          border: Border.all(
-              color: const Color.fromARGB(255, 59, 55, 55), width: 2.0),
-          borderRadius: BorderRadiusDirectional.circular(20),
-          color: const Color.fromARGB(255, 234, 240, 240)),
-      child: Column(
-        children: [
-          
-        ],
-      )
-    );
-  }
+  // Widget _highlight(){
+  //   return Container(
+  //     width: double.infinity,
+  //     height: 300.0,
+  //     margin: const EdgeInsets.all(20),
+  //     padding: const EdgeInsets.all(20),
+  //     decoration: BoxDecoration(
+  //         border: Border.all(
+  //             color: Color.fromARGB(255, 222, 216, 216), width: 2.0),
+  //         borderRadius: BorderRadiusDirectional.circular(20),
+  //         color: const Color.fromARGB(255, 234, 240, 240)),
+  //     child: Column(
+  //       children: [
+  //          Row(children: [
+  //           IconButton(
+  //             onPressed: () {},
+  //             icon: const Icon(Icons.flip_camera_android_outlined),
+  //             color: const Color.fromARGB(255, 0, 0, 0),
+  //             iconSize: 30.0,
+  //           ),
+  //           const Text(
+  //             "Highlights",
+  //             style: TextStyle(color: Color.fromARGB(255, 0, 0, 0), fontSize: 20.0),
+  //           ),
+  //         ]),
+
+  //       ],
+        
+  //     )
+  //   );
+  // }
 }
