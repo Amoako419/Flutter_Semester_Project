@@ -190,7 +190,7 @@ class _StepsState extends State<Steps> {
             ),
             Text(
               "Steps",
-              style: TextStyle(color: Colors.pink, fontSize: 16.0),
+              style: TextStyle(color: Colors.pink, fontSize: 20.0),
             ),
           ]),
           Text(
@@ -208,6 +208,25 @@ class _StepsState extends State<Steps> {
           )
         ],
       ),
+    );
+  }
+
+  Widget _highlight(){
+    return Container(
+      width: double.infinity,
+      height: 300.0,
+      margin: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+          border: Border.all(
+              color: const Color.fromARGB(255, 59, 55, 55), width: 2.0),
+          borderRadius: BorderRadiusDirectional.circular(20),
+          color: const Color.fromARGB(255, 234, 240, 240)),
+      child: Column(
+        children: [
+          
+        ],
+      )
     );
   }
 }
