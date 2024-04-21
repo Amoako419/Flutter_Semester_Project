@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:health_monitor/pages/cycletracker.dart';
+
 
 // ignore: camel_case_types
 class cycleTracker extends StatefulWidget {
@@ -106,12 +109,12 @@ onPressed: () {
   // Data to pass to the Water page
 // Replace with your actual data
 
-  // Navigator.push(
-  //   context,
-  //   CupertinoPageRoute(
-  //     builder: (context) => const cycleTracker(), // Pass data using constructor
-  //   ),
-  // );
+  Navigator.push(
+    context,
+    CupertinoPageRoute(
+      builder: (context) => const cycletracker(), // Pass data using constructor
+    ),
+  );
 },
 
     child: const Text("Get started", style: TextStyle(fontSize: 15.1, color: Colors.red)),
