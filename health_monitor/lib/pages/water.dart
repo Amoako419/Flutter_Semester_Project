@@ -47,8 +47,11 @@ IconButton(
                 ],
       ),
                   body: SingleChildScrollView(
-                    child: const Column(
-                      children: [],
+                    child:  Column(
+                      children: [
+                        _textt(),
+                        _circle(0.5)
+                      ],
                     ),
                   ),
                      floatingActionButton: const FloatingActionButton(
@@ -58,7 +61,47 @@ IconButton(
       ),
     );
   }
+  Widget _textt(){
+    return Container(
+      child: Center(child: Text("Add water intake", style: TextStyle(fontSize: 30.0,fontWeight: FontWeight.bold),)),
+    );
+  }
 
+  Widget _circle(double value){
+    
+  //  class BigCircularProgressIndicator extends StatelessWidget {
+  // final double value; // Progress value between 0.0 and 1.0
+  // final Color backgroundColor; // Background color of the indicator
+  // final Color valueColor; // Color of the progress arc
+
+  // const BigCircularProgressIndicator({
+  //   Key? key,
+  //   required this.value,
+  //   this.backgroundColor = Colors.grey,
+  //   this.valueColor = Colors.blue,
+  // }) : super(key: key);
+
+  // @override
+  // Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(38.0),
+      child: Center(
+        child: SizedBox(
+          height: 200,
+          width: 200,
+          child: CircularProgressIndicator(
+            strokeWidth: 10, // Adjust stroke width for a bigger indicator
+            value: value,
+            backgroundColor: Colors.grey,
+            valueColor: AlwaysStoppedAnimation(Colors.blue), // Use AlwaysStoppedAnimation for fixed color
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+  // }
 
   
-}
+// }
