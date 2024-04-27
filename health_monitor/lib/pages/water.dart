@@ -7,6 +7,16 @@ class Water extends StatefulWidget {
   State<Water> createState() => _WaterState();
 }
 
+
+void _increment(value){
+  value = value + 0.1;
+  if (value > 1){
+    value = 0;
+  }
+  else (
+     value = value + 0.1
+  );
+}
 class _WaterState extends State<Water> {
   @override
   Widget build(BuildContext context) {
@@ -50,7 +60,7 @@ IconButton(
                     child:  Column(
                       children: [
                         _textt(),
-                        _circle(0.5)
+                        _circle(0.7),
                       ],
                     ),
                   ),
@@ -86,16 +96,29 @@ IconButton(
     return Padding(
       padding: const EdgeInsets.all(38.0),
       child: Center(
-        child: SizedBox(
-          height: 200,
-          width: 200,
-          child: CircularProgressIndicator(
-            strokeWidth: 10, // Adjust stroke width for a bigger indicator
-            value: value,
-            backgroundColor: Colors.grey,
-            valueColor: AlwaysStoppedAnimation(Colors.blue), // Use AlwaysStoppedAnimation for fixed color
-          ),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 200,
+              width: 200,
+              child: CircularProgressIndicator(
+                strokeWidth: 10, // Adjust stroke width for a bigger indicator
+                value: value,
+                backgroundColor: Colors.grey,
+                valueColor: AlwaysStoppedAnimation(Colors.blue), // Use AlwaysStoppedAnimation for fixed color
+              ),
+              
+            ),
+            Padding(
+              padding: EdgeInsets.all(20.0),
+              child: ElevatedButton(onPressed: (){
+                _increment(value);
+              },
+              child: const Text("Add water"),),
+            )
+          ],
         ),
+      
       ),
     );
   }
